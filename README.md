@@ -52,8 +52,6 @@ See the [BSP API Reference Manual][api] for the complete list of the provided in
 * [CY8CKIT-062-WIFI-BT BSP API Reference Manual][api]
 * [CY8CKIT-062-WIFI-BT Documentation](http://www.cypress.com/documentation/development-kitsboards/psoc-6-wifi-bt-pioneer-kit)
 * [Cypress Semiconductor](http://www.cypress.com)
-* [Cypress Semiconductor GitHub](https://github.com/cypresssemiconductorco)
-* [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
 
 [api]: https://cypresssemiconductorco.github.io/TARGET_CY8CKIT-062-WIFI-BT/html/modules.html
 
