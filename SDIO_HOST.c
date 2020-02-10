@@ -23,6 +23,7 @@
 *******************************************************************************/
 
 #include "SDIO_HOST.h"
+#include "cy_utils.h"
 
 #if defined(__cplusplus)
 extern "C" {
@@ -107,6 +108,7 @@ static void SDIO_RestoreConfig(void);
 *******************************************************************************/
 cy_en_syspm_status_t SDIO_DeepSleepCallback(cy_stc_syspm_callback_params_t *params, cy_en_syspm_callback_mode_t mode)
 {
+    CY_UNUSED_PARAMETER(params);
     cy_en_syspm_status_t status = CY_SYSPM_FAIL;
 
     switch (mode) 
@@ -720,7 +722,6 @@ en_sdio_result_t SDIO_SendCommandAndWait(stc_sdio_cmd_t *pstcCmd)
     /*Wait for the command to finish*/
     do
     {
-        //TODO: Use RTOS timeout
         u32CmdTimeout++;
         enRetTmp = SDIO_CheckForEvent(SdCmdEventCmdDone);
 
