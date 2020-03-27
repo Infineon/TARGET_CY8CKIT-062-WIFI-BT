@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__group__sdio__crc.html','');});
+$(document).ready(function(){initNavTree('md_bsp_boards_mt_bsp_user_guide.html','');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,53 +86,41 @@ $(document).ready(function(){initNavTree('group__group__sdio__crc.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">Constants for 7bit CRC for command<div class="ingroups"><a class="el" href="group__group__udb__sdio.html">UDB_SDIO</a> &raquo; <a class="el" href="group__group__udb__sdio__macros.html">Macros</a></div></div>  </div>
+<div class="title">ModusToolbox Board Support Package (BSP) Overview </div>  </div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">General Description</h2>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga5f078046cc65fc30eefd65b618137113"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__sdio__crc.html#ga5f078046cc65fc30eefd65b618137113">SDIO_CRC7_POLY</a>&#160;&#160;&#160;(0x12u)</td></tr>
-<tr class="separator:ga5f078046cc65fc30eefd65b618137113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabfc935aca46bb15fcc8180038619a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__group__sdio__crc.html#gaabfc935aca46bb15fcc8180038619a45">SDIO_CRC_UPPER_BIT</a>&#160;&#160;&#160;(0x80u)</td></tr>
-<tr class="separator:gaabfc935aca46bb15fcc8180038619a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5f078046cc65fc30eefd65b618137113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5f078046cc65fc30eefd65b618137113">&#9670;&nbsp;</a></span>SDIO_CRC7_POLY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SDIO_CRC7_POLY&#160;&#160;&#160;(0x12u)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Value of CRC polynomial </p>
-
-</div>
-</div>
-<a id="gaabfc935aca46bb15fcc8180038619a45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabfc935aca46bb15fcc8180038619a45">&#9670;&nbsp;</a></span>SDIO_CRC_UPPER_BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SDIO_CRC_UPPER_BIT&#160;&#160;&#160;(0x80u)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Upper bit to test if it is high </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><h2>Introduction</h2>
+<p>A Board Support Package (BSP) provides a standard interface to a board's features and capabilities. The API is consistent across Cypress kits. Other software (such as middleware or the user's application) can use the BSP to configure and control the hardware. BSPs have the following characteristics:</p>
+<ul>
+<li>BSPs initialize device resources, such as clocks and power supplies to set up the device to run firmware.</li>
+<li>BSPs contain linker scripts and startup code so you can customize them for your board.</li>
+<li>BSPs contain the hardware configuration (structures and macros) for both device peripherals and board peripherals.</li>
+<li>BSPs provide abstraction to the board by providing common aliases or names to refer to the board peripherals, such as buttons and LEDs.</li>
+<li>BSPs include the libraries for the default capabilities on the board. For example, the BSP for a kit with CapSense capabilities includes the CapSense library.</li>
+</ul>
+<p>For a complete description of what the BSP provides and how it is used within ModusToolbox, see the <a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox User Guide</a></p>
+<h2>Quick Start with BSPs</h2>
+<p>This section provides a high-level view for using BSPs. You should be familiar with creating an application using both the ModusToolbox IDE and command-line environments. To use a BSP for a Cypress kit you need to perform the following steps:</p><ol type="1">
+<li>Get a BSP using one of the following methods:<ul>
+<li>Create an application with the Project Creation tool included with the ModusToolbox software installer (<em>&lt; ModusToolbox install&gt;/tools_2.x/project-creator</em>). This tool can also be launched from the Eclipse IDE for ModusToolbox. The tool fetches the BSP for the kit that you selected, and places it in the <em>libs</em> directory.</li>
+<li>In an existing application, use the Library Manager tool to fetch the required BSP. This tool is located in <em>&lt; ModusToolbox install &gt;/tools_2.x/library-manager</em>. You can also launch it from within the ModusToolbox IDE.</li>
+<li>In an existing application, create a .lib file specifying the BSP and version (commit, tag, or branch). Then run <code>make getlibs</code> to fetch the BSP and any associated libraries. The .lib file typically goes in the deps directory.</li>
+<li>In an existing application, clone the Cypress BSP GitHub repository using the git clone command. For example: <code>git clone [<a href="https://github.com/cypresssemiconductorco/TARGET_CY8CPROTO-062-4343W/#latest-v1.X">https://github.com/cypresssemiconductorco/TARGET_CY8CPROTO-062-4343W/#latest-v1.X</a>]</code> A BSP includes other libraries. To fetch all the libraries, use the <code>make getlibs</code> command from a command shell in the top directory of the application.</li>
+</ul>
+</li>
+<li>Add #<code>include "cybsp.h"</code> to your <em>main.c</em> file.</li>
+<li>Add <code><a class="el" href="group__group__bsp__functions.html#gab989986b285e127f78f61c29f6ccbbfa" title="Initialize all hardware on the board. ">cybsp_init()</a></code> at the start of <code>main()</code>.</li>
+<li>Refer to the API documentation available inside that BSP <em>docs</em> directory to learn more.</li>
+</ol>
+<h2>References</h2>
+<ul>
+<li><a href="https://www.cypress.com/products/modustoolbox-software-environment">ModusToolbox</a></li>
+<li><a href="http://www.cypress.com/ModusToolboxUserGuide">ModusToolbox User Guide</a></li>
+<li><a href="http://www.cypress.com">Cypress Semiconductor</a></li>
+<li><a href="https://github.com/cypresssemiconductorco">Cypress Semiconductor GitHub</a> </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part
 <div id="nav-path" class="navpath">

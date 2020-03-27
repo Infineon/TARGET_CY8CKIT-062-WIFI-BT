@@ -6,7 +6,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2019 Cypress Semiconductor Corporation
+# Copyright 2018-2020 Cypress Semiconductor Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ CORE?=CM4
 
 ifeq ($(CORE),CM4)
 # Additional components supported by the target
-COMPONENTS+=CM0P_SLEEP BSP_DESIGN_MODUS PSOC6HAL
+COMPONENTS+=CM0P_SLEEP BSP_DESIGN_MODUS PSOC6HAL UDB_SDIO_P2
 # Use CyHAL & UDB based SDIO
 DEFINES+=CY_USING_HAL CYHAL_UDB_SDIO
 endif
