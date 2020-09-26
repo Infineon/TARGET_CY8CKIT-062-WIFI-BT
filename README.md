@@ -45,9 +45,6 @@ Defines:
 | FLL      | IMO       | 100.0 MHz        |
 | PLL      | IMO       | 48.0 MHz         |
 | CLK_HF0  | CLK_PATH0 | 100 MHz          |
-| CLK_HF1  | CLK_PATH1 | 48 MHz           |
-| CLK_HF2  | CLK_PATH0 | 50 MHz           |
-| CLK_HF3  | CLK_PATH1 | 48 MHz           |
 
 ### Power Configuration
 

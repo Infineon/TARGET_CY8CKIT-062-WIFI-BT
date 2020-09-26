@@ -1,11 +1,4 @@
 /***************************************************************************//**
-* \file CY8CKIT-062-WIFI-BT/cybsp_types.h
-*
-* Description:
-* Provides APIs for interacting with the hardware contained on the Cypress
-* CY8CKIT-062-WIFI-BT pioneer kit.
-*
-********************************************************************************
 * \copyright
 * Copyright 2018-2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
@@ -37,40 +30,9 @@ extern "C" {
 #endif
 
 /**
-* \addtogroup group_bsp_settings BSP Settings
-* \{
-*
-* <div class="category">Peripheral Default HAL Settings:</div>
-* | Resource   | Parameter | Value | Remarks |
-* | :------:   | :-------: | :---: | :------ |
-* | ADC        | VREF      | 1.2 V | |
-* | ^          | Measurement type | Single Ended | |
-* | ^          | Input voltage range | 0 to 2.4 V (0 to 2*VREF) | |
-* | ^          | Output range | 0x000 to 0x7FF | |
-* | DAC        | Reference source | VDDA | |
-* | ^          | Input range | 0x000 to 0xFFF | |
-* | ^          | Output range | 0 to VDDA | |
-* | ^          | Output type | Unbuffered output | |
-* | I2C        | Role | Master | Configurable to slave mode through HAL function |
-* | ^          | Data rate | 100 kbps | Configurable through HAL function |
-* | ^          | Drive mode of SCL & SDA pins | Open Drain (drives low) | External pull-up resistors are required |
-* | LpTimer    | Uses WCO (32.768 kHz) as clock source & MCWDT as counter; 1 count = 1/32768 second or 32768 counts = 1 second |||
-* | SPI        | Data rate | 100 kpbs | Configurable through HAL function |
-* | ^          | Slave select polarity | Active low | |
-* | UART       | Flow control | No flow control | Configurable through HAL function |
-* | ^          | Data format | 8N1 | Configurable through HAL function |
-* | ^          | Baud rate | 115200 | Configurable through HAL function |
-* | OPAMP,COMP | Pin (P9_3)      | Always 0 V  | R162 is not soldered by default |
-* | LPCOMP     | Pins (P8_2, P8_3)      | Always 0 V  | R153, R166 are not soldered by default |
-
-*/
-/** \} group_bsp_settings */
-
-/**
 * \addtogroup group_bsp_pin_state Pin States
 * \{
 */
-
 /** Pin state for the LED on. */
 #ifndef CYBSP_LED_STATE_ON
 #define CYBSP_LED_STATE_ON          (0U)
@@ -79,7 +41,6 @@ extern "C" {
 #ifndef CYBSP_LED_STATE_OFF
 #define CYBSP_LED_STATE_OFF         (1U)
 #endif
-
 /** Pin state for when a button is pressed. */
 #ifndef CYBSP_BTN_PRESSED
 #define CYBSP_BTN_PRESSED           (0U)
@@ -88,10 +49,7 @@ extern "C" {
 #ifndef CYBSP_BTN_OFF
 #define CYBSP_BTN_OFF               (1U)
 #endif
-
 /** \} group_bsp_pin_state */
-
-#if defined(CY_USING_HAL)
 
 /**
 * \addtogroup group_bsp_pins Pin Mappings
@@ -103,222 +61,415 @@ extern "C" {
 * \{
 */
 
-/** LED 8; User LED1 */
-#ifndef CYBSP_LED8
-#define CYBSP_LED8                  (P1_5)
+#ifdef CYBSP_LED_RGB_RED
+/** RGB LED - Red \def CYBSP_LED_RGB_RED
+*/
 #endif
-/** LED 9; User LED2 */
-#ifndef CYBSP_LED9
-#define CYBSP_LED9                  (P13_7)
+#ifdef CYBSP_LED_RGB_GREEN
+/** RGB LED - Green \def CYBSP_LED_RGB_GREEN
+*/
 #endif
-/** LED 5: RGB LED - Red; User LED3 */
-#ifndef CYBSP_LED_RGB_RED
-#define CYBSP_LED_RGB_RED           (P0_3)
+#ifdef CYBSP_LED_RGB_BLUE
+/** RGB LED - Blue \def CYBSP_LED_RGB_BLUE
+*/
 #endif
-/** LED 5: RGB LED - Green; User LED4 */
-#ifndef CYBSP_LED_RGB_GREEN
-#define CYBSP_LED_RGB_GREEN         (P1_1)
+#ifdef CYBSP_USER_LED
+/** User LED \def CYBSP_USER_LED
+*/
 #endif
-/** LED 5: RGB LED - Blue; User LED5 */
-#ifndef CYBSP_LED_RGB_BLUE
-#define CYBSP_LED_RGB_BLUE          (P11_1)
+#ifdef CYBSP_USER_LED1
+/** User LED1 \def CYBSP_USER_LED1
+*/
 #endif
-
-/** LED 8; User LED1 */
-#ifndef CYBSP_USER_LED1
-#define CYBSP_USER_LED1             (CYBSP_LED8)
+#ifdef CYBSP_USER_LED2
+/** User LED2 \def CYBSP_USER_LED2
+*/
 #endif
-/** LED 9; User LED2 */
-#ifndef CYBSP_USER_LED2
-#define CYBSP_USER_LED2             (CYBSP_LED9)
+#ifdef CYBSP_USER_LED3
+/** User LED3 \def CYBSP_USER_LED3
+*/
 #endif
-/** LED 5: RGB LED - Red; User LED3 */
-#ifndef CYBSP_USER_LED3
-#define CYBSP_USER_LED3             (CYBSP_LED_RGB_RED)
+#ifdef CYBSP_USER_LED4
+/** User LED 4 \def CYBSP_USER_LED4
+*/
 #endif
-/** LED 5: RGB LED - Green; User LED4 */
-#ifndef CYBSP_USER_LED4
-#define CYBSP_USER_LED4             (CYBSP_LED_RGB_GREEN)
+#ifdef CYBSP_USER_LED5
+/** User LED 5 \def CYBSP_USER_LED5
+*/
 #endif
-/** LED 5: RGB LED - Blue; User LED5 */
-#ifndef CYBSP_USER_LED5
-#define CYBSP_USER_LED5             (CYBSP_LED_RGB_BLUE)
+#ifdef CYBSP_USER_LED6
+/** User LED 6 \def CYBSP_USER_LED6
+*/
 #endif
-/** LED 8; User LED1 */
-#ifndef CYBSP_USER_LED
-#define CYBSP_USER_LED              (CYBSP_USER_LED1)
+#ifdef CYBSP_USER_LED7
+/** User LED 7 \def CYBSP_USER_LED7
+*/
+#endif
+#ifdef CYBSP_USER_LED8
+/** User LED 8 \def CYBSP_USER_LED8
+*/
+#endif
+#ifdef CYBSP_USER_LED9
+/** User LED 9 \def CYBSP_USER_LED9
+*/
+#endif
+#ifdef CYBSP_USER_LED10
+/** LED 10 \def CYBSP_USER_LED10
+*/
+#endif
+#ifdef CYBSP_LED1
+/** LED 1 \def CYBSP_LED1
+*/
+#endif
+#ifdef CYBSP_LED2
+/** LED 2 \def CYBSP_LED2
+*/
+#endif
+#ifdef CYBSP_LED3
+/** LED 3 \def CYBSP_LED3
+*/
+#endif
+#ifdef CYBSP_LED3_RGB_RED
+/** LED 3: RGB LED - Red \def CYBSP_LED3_RGB_RED
+*/
+#endif
+#ifdef CYBSP_LED3_RGB_GREEN
+/** LED 3: RGB LED - Green \def CYBSP_LED3_RGB_GREEN
+*/
+#endif
+#ifdef CYBSP_LED3_RGB_BLUE
+/** LED 3: RGB LED - Blue \def CYBSP_LED3_RGB_BLUE
+*/
+#endif
+#ifdef CYBSP_LED4
+/** LED 4 \def CYBSP_LED4
+*/
+#endif
+#ifdef CYBSP_LED5
+/** LED 5 \def CYBSP_LED5
+*/
+#endif
+#ifdef CYBSP_LED6
+/** LED 6 \def CYBSP_LED6
+*/
+#endif
+#ifdef CYBSP_LED7
+/** LED 7 \def CYBSP_LED7
+*/
+#endif
+#ifdef CYBSP_LED8
+/** LED 8 \def CYBSP_LED8
+*/
+#endif
+#ifdef CYBSP_LED9
+/** LED 9 \def CYBSP_LED9
+*/
+#endif
+#ifdef CYBSP_LED10
+/** LED 10 \def CYBSP_LED10
+*/
+#endif
+#ifdef CYBSP_LED11
+/** LED 11 \def CYBSP_LED11
+*/
+#endif
+#ifdef CYBSP_LED12
+/** LED 12 \def CYBSP_LED12
+*/
+#endif
+#ifdef CYBSP_LED13
+/** LED 13 \def CYBSP_LED13
+*/
+#endif
+#ifdef CYBSP_LED_SLD0
+/** Slider LED 0 \def CYBSP_LED_SLD0
+*/
+#endif
+#ifdef CYBSP_LED_SLD1
+/** Slider LED 1 \def CYBSP_LED_SLD1
+*/
+#endif
+#ifdef CYBSP_LED_SLD2
+/** Slider LED 2 \def CYBSP_LED_SLD2
+*/
+#endif
+#ifdef CYBSP_LED_SLD3
+/** Slider LED 3 \def CYBSP_LED_SLD3
+*/
+#endif
+#ifdef CYBSP_LED_SLD4
+/** Slider LED 4 \def CYBSP_LED_SLD4
+*/
+#endif
+#ifdef CYBSP_LED_SLD5
+/** LED 10; Slider LED 5 \def CYBSP_LED_SLD5
+*/
+#endif
+#ifdef CYBSP_LED_BTN0
+/** Button LED 0 \def CYBSP_LED_BTN0
+*/
+#endif
+#ifdef CYBSP_LED_BTN1
+/** Button LED 1 \def CYBSP_LED_BTN1
+*/
+#endif
+#ifdef CYBSP_LED_BTN2
+/** Button LED 2 \def CYBSP_LED_BTN2
+*/
 #endif
 
 /** \} group_bsp_pins_led */
-
 
 /**
 * \addtogroup group_bsp_pins_btn Button Pins
 * \{
 */
 
-/** Switch 2; User Button 1 */
-#ifndef CYBSP_SW2
-#define CYBSP_SW2                   (P0_4)
+#ifdef CYBSP_SW1
+/** Switch 1 \def CYBSP_SW1
+*/
 #endif
-
-/** Switch 2; User Button 1 */
-#ifndef CYBSP_USER_BTN1
-#define CYBSP_USER_BTN1             (CYBSP_SW2)
+#ifdef CYBSP_SW2
+/** Switch 2 \def CYBSP_SW2
+*/
 #endif
-/** Switch 2; User Button 1 */
-#ifndef CYBSP_USER_BTN
-#define CYBSP_USER_BTN              (CYBSP_USER_BTN1)
+#ifdef CYBSP_SW3
+/** Switch 3 \def CYBSP_SW3
+*/
+#endif
+#ifdef CYBSP_SW4
+/** Switch 4 \def CYBSP_SW4
+*/
+#endif
+#ifdef CYBSP_USER_BTN
+/** User Button 1 \def CYBSP_USER_BTN
+*/
+#endif
+#ifdef CYBSP_USER_BTN1
+/** User Button 1 \def CYBSP_USER_BTN1
+*/
+#endif
+#ifdef CYBSP_USER_BTN2
+/** User Button 2 \def CYBSP_USER_BTN2
+*/
+#endif
+#ifdef CYBSP_POTENTIOMETER_INPUT
+/** Potentiometer input \def CYBSP_POTENTIOMETER_INPUT
+*/
 #endif
 
 /** \} group_bsp_pins_btn */
-
 
 /**
 * \addtogroup group_bsp_pins_comm Communication Pins
 * \{
 */
 
-/** Pin: WIFI SDIO D0 */
-#ifndef CYBSP_WIFI_SDIO_D0
-#define CYBSP_WIFI_SDIO_D0          (P2_0)
+#ifdef CYBSP_DEBUG_UART_RX
+/** Pin: UART RX \def CYBSP_DEBUG_UART_RX
+*/
 #endif
-/** Pin: WIFI SDIO D1 */
-#ifndef CYBSP_WIFI_SDIO_D1
-#define CYBSP_WIFI_SDIO_D1          (P2_1)
+#ifdef CYBSP_DEBUG_UART_TX
+/** Pin: UART TX \def CYBSP_DEBUG_UART_TX
+*/
 #endif
-/** Pin: WIFI SDIO D2 */
-#ifndef CYBSP_WIFI_SDIO_D2
-#define CYBSP_WIFI_SDIO_D2          (P2_2)
+#ifdef CYBSP_I2C_SCL
+/** Pin: I2C SCL \def CYBSP_I2C_SCL
+*/
 #endif
-/** Pin: WIFI SDIO D3 */
-#ifndef CYBSP_WIFI_SDIO_D3
-#define CYBSP_WIFI_SDIO_D3          (P2_3)
+#ifdef CYBSP_I2C_SDA
+/** Pin: I2C SDA \def CYBSP_I2C_SDA
+*/
 #endif
-/** Pin: WIFI SDIO CMD */
-#ifndef CYBSP_WIFI_SDIO_CMD
-#define CYBSP_WIFI_SDIO_CMD         (P2_4)
+#ifdef CYBSP_SWDIO
+/** Pin: SWDIO \def CYBSP_SWDIO
+*/
 #endif
-/** Pin: WIFI SDIO CLK */
-#ifndef CYBSP_WIFI_SDIO_CLK
-#define CYBSP_WIFI_SDIO_CLK         (P2_5)
+#ifdef CYBSP_SWDCK
+/** Pin: SWDCK \def CYBSP_SWDCK
+*/
 #endif
-/** Pin: WIFI ON */
-#ifndef CYBSP_WIFI_WL_REG_ON
-#define CYBSP_WIFI_WL_REG_ON        (P2_6)
+#ifdef CYBSP_SPI_MOSI
+/** Pin: SPI MOSI \def CYBSP_SPI_MOSI
+*/
 #endif
-/** Pin: WIFI Host Wakeup */
-#ifndef CYBSP_WIFI_HOST_WAKE
-#define CYBSP_WIFI_HOST_WAKE        (P2_7)
+#ifdef CYBSP_SPI_MISO
+/** Pin: SPI MISO \def CYBSP_SPI_MISO
+*/
 #endif
+#ifdef CYBSP_SPI_CLK
+/** Pin: SPI CLK \def CYBSP_SPI_CLK
+*/
+#endif
+#ifdef CYBSP_SPI_CS
+/** Pin: SPI CS \def CYBSP_SPI_CS
+*/
+#endif
+#ifdef CYBSP_SWO
+/** Pin: SWO \def CYBSP_SWO
+*/
+#endif
+#ifdef CYBSP_QSPI_SS
+/** Pin: QUAD SPI SS \def CYBSP_QSPI_SS
+*/
+#endif
+#ifdef CYBSP_QSPI_D3
+/** Pin: QUAD SPI D3 \def CYBSP_QSPI_D3
+*/
+#endif
+#ifdef CYBSP_QSPI_D2
+/** Pin: QUAD SPI D2 \def CYBSP_QSPI_D2
+*/
+#endif
+#ifdef CYBSP_QSPI_D1
+/** Pin: QUAD SPI D1 \def CYBSP_QSPI_D1
+*/
+#endif
+#ifdef CYBSP_QSPI_D0
+/** Pin: QUAD SPI D0 \def CYBSP_QSPI_D0
+*/
+#endif
+#ifdef CYBSP_QSPI_SCK
+/** Pin: QUAD SPI SCK \def CYBSP_QSPI_SCK
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_D0
+/** Pin: WIFI SDIO D0 \def CYBSP_WIFI_SDIO_D0
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_D1
+/** Pin: WIFI SDIO D1 \def CYBSP_WIFI_SDIO_D1
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_D2
+/** Pin: WIFI SDIO D2 \def CYBSP_WIFI_SDIO_D2
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_D3
+/** Pin: WIFI SDIO D3 \def CYBSP_WIFI_SDIO_D3
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_CMD
+/** Pin: WIFI SDIO CMD \def CYBSP_WIFI_SDIO_CMD
+*/
+#endif
+#ifdef CYBSP_WIFI_SDIO_CLK
+/** Pin: WIFI SDIO CLK \def CYBSP_WIFI_SDIO_CLK
+*/
+#endif
+#ifdef CYBSP_WIFI_WL_REG_ON
+/** Pin: WIFI ON \def CYBSP_WIFI_WL_REG_ON
+*/
+#endif
+#ifdef CYBSP_WIFI_HOST_WAKE
+/** Pin: WIFI Host Wakeup \def CYBSP_WIFI_HOST_WAKE
+*/
 
-/** Pin: BT UART RX */
-#ifndef CYBSP_BT_UART_RX
-#define CYBSP_BT_UART_RX            (P3_0)
-#endif
-/** Pin: BT UART TX */
-#ifndef CYBSP_BT_UART_TX
-#define CYBSP_BT_UART_TX            (P3_1)
-#endif
-/** Pin: BT UART RTS */
-#ifndef CYBSP_BT_UART_RTS
-#define CYBSP_BT_UART_RTS           (P3_2)
-#endif
-/** Pin: BT UART CTS */
-#ifndef CYBSP_BT_UART_CTS
-#define CYBSP_BT_UART_CTS           (P3_3)
-#endif
-
-/** Pin: BT Power */
-#ifndef CYBSP_BT_POWER
-#define CYBSP_BT_POWER              (P3_4)
-#endif
-/** Pin: BT Host Wakeup */
-#ifndef CYBSP_BT_HOST_WAKE
-#define CYBSP_BT_HOST_WAKE          (P3_5)
-#endif
-/** Pin: BT Device Wakeup */
-#ifndef CYBSP_BT_DEVICE_WAKE
-#define CYBSP_BT_DEVICE_WAKE        (P4_0)
-#endif
-
-/** Pin: UART RX */
-#ifndef CYBSP_DEBUG_UART_RX
-#define CYBSP_DEBUG_UART_RX         (P5_0)
-#endif
-/** Pin: UART TX */
-#ifndef CYBSP_DEBUG_UART_TX
-#define CYBSP_DEBUG_UART_TX         (P5_1)
-#endif
-
-/** Pin: I2C SCL */
-#ifndef CYBSP_I2C_SCL
-#define CYBSP_I2C_SCL               (P6_0)
-#endif
-/** Pin: I2C SDA */
-#ifndef CYBSP_I2C_SDA
-#define CYBSP_I2C_SDA               (P6_1)
-#endif
-
-/** Pin: SWO */
-#ifndef CYBSP_SWO
-#define CYBSP_SWO                   (P6_4)
-#endif
-/** Pin: SWDIO */
-#ifndef CYBSP_SWDIO
-#define CYBSP_SWDIO                 (P6_6)
-#endif
-/** Pin: SWDCK */
-#ifndef CYBSP_SWDCK
-#define CYBSP_SWDCK                 (P6_7)
-#endif
-
-/** Pin: QUAD SPI SS */
-#ifndef CYBSP_QSPI_SS
-#define CYBSP_QSPI_SS               (P11_2)
-#endif
-/** Pin: QUAD SPI D3 */
-#ifndef CYBSP_QSPI_D3
-#define CYBSP_QSPI_D3               (P11_3)
-#endif
-/** Pin: QUAD SPI D2 */
-#ifndef CYBSP_QSPI_D2
-#define CYBSP_QSPI_D2               (P11_4)
-#endif
-/** Pin: QUAD SPI D1 */
-#ifndef CYBSP_QSPI_D1
-#define CYBSP_QSPI_D1               (P11_5)
-#endif
-/** Pin: QUAD SPI D0 */
-#ifndef CYBSP_QSPI_D0
-#define CYBSP_QSPI_D0               (P11_6)
-#endif
-/** Pin: QUAD SPI SCK */
-#ifndef CYBSP_QSPI_SCK
-#define CYBSP_QSPI_SCK              (P11_7)
-#endif
-
-/** Pin: SPI MOSI */
-#ifndef CYBSP_SPI_MOSI
-#define CYBSP_SPI_MOSI              (P12_0)
-#endif
-/** Pin: SPI MISO */
-#ifndef CYBSP_SPI_MISO
-#define CYBSP_SPI_MISO              (P12_1)
-#endif
-/** Pin: SPI CLK */
-#ifndef CYBSP_SPI_CLK
-#define CYBSP_SPI_CLK               (P12_2)
-#endif
-/** Pin: SPI CS */
-#ifndef CYBSP_SPI_CS
-#define CYBSP_SPI_CS                (P12_3)
-#endif
-
-/** Host-wake GPIO drive mode */
+/** WiFi host-wake GPIO drive mode */
 #define CYBSP_WIFI_HOST_WAKE_GPIO_DM (CYHAL_GPIO_DRIVE_ANALOG)
-/** Host-wake IRQ event */
+/** WiFi host-wake IRQ event */
 #define CYBSP_WIFI_HOST_WAKE_IRQ_EVENT (CYHAL_GPIO_IRQ_RISE)
+#endif
+#ifdef CYBSP_BT_UART_RX
+/** Pin: BT UART RX \def CYBSP_BT_UART_RX
+*/
+#endif
+#ifdef CYBSP_BT_UART_TX
+/** Pin: BT UART TX \def CYBSP_BT_UART_TX
+*/
+#endif
+#ifdef CYBSP_BT_UART_RTS
+/** Pin: BT UART RTS \def CYBSP_BT_UART_RTS
+*/
+#endif
+#ifdef CYBSP_BT_UART_CTS
+/** Pin: BT UART CTS \def CYBSP_BT_UART_CTS
+*/
+#endif
+#ifdef CYBSP_BT_POWER
+/** Pin: BT Power \def CYBSP_BT_POWER
+*/
+#endif
+#ifdef CYBSP_BT_HOST_WAKE
+/** Pin: BT Host Wakeup \def CYBSP_BT_HOST_WAKE
+*/
+/** BT host-wake GPIO drive mode */
+#define CYBSP_BT_HOST_WAKE_GPIO_DM (CYHAL_GPIO_DRIVE_NONE)
+/** BT host wake IRQ event */
+#define CYBSP_BT_HOST_WAKE_IRQ_EVENT (CYHAL_GPIO_IRQ_FALL)
+#endif
+#ifdef CYBSP_BT_DEVICE_WAKE
+/** Pin: BT Device Wakeup \def CYBSP_BT_DEVICE_WAKE
+*/
+/** BT device wakeup GPIO drive mode */
+#define CYBSP_BT_DEVICE_WAKE_GPIO_DM (CYHAL_GPIO_DRIVE_STRONG)
+/** BT device wakeup polarity */
+#define CYBSP_BT_DEVICE_WAKE_POLARITY (0u)
+#endif
+#ifdef CYBSP_PDM_CLK
+/** Pin: PDM PCM CLK \def CYBSP_PDM_CLK
+*/
+#endif
+#ifdef CYBSP_PDM_DATA
+/** Pin PDM PCM DATA \def CYBSP_PDM_DATA
+*/
+#endif
+#ifdef CYBSP_I2S_MCLK
+/** Pin: I2S MCLK \def CYBSP_I2S_MCLK
+*/
+#endif
+#ifdef CYBSP_I2S_TX_SCK
+/** Pin: I2S TX SCK \def CYBSP_I2S_TX_SCK
+*/
+#endif
+#ifdef CYBSP_I2S_TX_WS
+/** Pin: I2S TX WS \def CYBSP_I2S_TX_WS
+*/
+#endif
+#ifdef CYBSP_I2S_TX_DATA
+/** Pin: I2S TX DATA \def CYBSP_I2S_TX_DATA
+*/
+#endif
+#ifdef CYBSP_I2S_RX_SCK
+/** Pin: I2S RX SCK \def CYBSP_I2S_RX_SCK
+*/
+#endif
+#ifdef CYBSP_I2S_RX_WS
+/** Pin: I2S RX WS \def CYBSP_I2S_RX_WS
+*/
+#endif
+#ifdef CYBSP_I2S_RX_DATA
+/** Pin: I2S RX DATA \def CYBSP_I2S_RX_DATA
+*/
+#endif
+#ifdef CYBSP_DEBUG_UART_RTS
+/** Pin: UART RX \def CYBSP_DEBUG_UART_RTS
+*/
+#endif
+#ifdef CYBSP_DEBUG_UART_CTS
+/** Pin: UART TX \def CYBSP_DEBUG_UART_CTS
+*/
+#endif
+#ifdef CYBSP_UART_RX
+/** Pin: UART RX \def CYBSP_UART_RX
+*/
+#endif
+#ifdef CYBSP_UART_TX
+/** Pin: UART TX \def CYBSP_UART_TX
+*/
+#endif
+#ifdef CYBSP_TDO_SWO
+/** Pin: \def CYBSP_TDO_SWO
+*/
+#endif
+#ifdef CYBSP_TMS_SWDIO
+/** Pin: \def CYBSP_TMS_SWDIO
+*/
+#endif
+#ifdef CYBSP_SWCLK
+/** Pin: \def CYBSP_SWCLK
+*/
+#endif
 
 /** \} group_bsp_pins_comm */
 
@@ -328,189 +479,330 @@ extern "C" {
 * \{
 */
 
-/** Arduino A0 */
-#ifndef CYBSP_A0
-#define CYBSP_A0                    (P10_0)
+#ifdef CYBSP_A0
+/** Arduino A0 \def CYBSP_A0
+*/
 #endif
-/** Arduino A1 */
-#ifndef CYBSP_A1
-#define CYBSP_A1                    (P10_1)
+#ifdef CYBSP_A1
+/** Arduino A1 \def CYBSP_A1
+*/
 #endif
-/** Arduino A2 */
-#ifndef CYBSP_A2
-#define CYBSP_A2                    (P10_2)
+#ifdef CYBSP_A2
+/** Arduino A2 \def CYBSP_A2
+*/
 #endif
-/** Arduino A3 */
-#ifndef CYBSP_A3
-#define CYBSP_A3                    (P10_3)
+#ifdef CYBSP_A3
+/** Arduino A3 \def CYBSP_A3
+*/
 #endif
-/** Arduino A4 */
-#ifndef CYBSP_A4
-#define CYBSP_A4                    (P10_4)
+#ifdef CYBSP_A4
+/** Arduino A4 \def CYBSP_A4
+*/
 #endif
-/** Arduino A5 */
-#ifndef CYBSP_A5
-#define CYBSP_A5                    (P10_5)
+#ifdef CYBSP_A5
+/** Arduino A5 \def CYBSP_A5
+*/
 #endif
-/** Arduino D0 */
-#ifndef CYBSP_D0
-#define CYBSP_D0                    (P5_0)
+#ifdef CYBSP_D0
+/** Arduino D0 \def CYBSP_D0
+*/
 #endif
-/** Arduino D1 */
-#ifndef CYBSP_D1
-#define CYBSP_D1                    (P5_1)
+#ifdef CYBSP_D1
+/** Arduino D1 \def CYBSP_D1
+*/
 #endif
-/** Arduino D2 */
-#ifndef CYBSP_D2
-#define CYBSP_D2                    (P5_2)
+#ifdef CYBSP_D2
+/** Arduino D2 \def CYBSP_D2
+*/
 #endif
-/** Arduino D3 */
-#ifndef CYBSP_D3
-#define CYBSP_D3                    (P5_3)
+#ifdef CYBSP_D3
+/** Arduino D3 \def CYBSP_D3
+*/
 #endif
-/** Arduino D4 */
-#ifndef CYBSP_D4
-#define CYBSP_D4                    (P5_4)
+#ifdef CYBSP_D4
+/** Arduino D4 \def CYBSP_D4
+*/
 #endif
-/** Arduino D5 */
-#ifndef CYBSP_D5
-#define CYBSP_D5                    (P5_5)
+#ifdef CYBSP_D5
+/** Arduino D5 \def CYBSP_D5
+*/
 #endif
-/** Arduino D6 */
-#ifndef CYBSP_D6
-#define CYBSP_D6                    (P5_6)
+#ifdef CYBSP_D6
+/** Arduino D6 \def CYBSP_D6
+*/
 #endif
-/** Arduino D7 */
-#ifndef CYBSP_D7
-#define CYBSP_D7                    (P0_2)
+#ifdef CYBSP_D7
+/** Arduino D7 \def CYBSP_D7
+*/
 #endif
-/** Arduino D8 */
-#ifndef CYBSP_D8
-#define CYBSP_D8                    (P13_0)
+#ifdef CYBSP_D8
+/** Arduino D8 \def CYBSP_D8
+*/
 #endif
-/** Arduino D9 */
-#ifndef CYBSP_D9
-#define CYBSP_D9                    (P13_1)
+#ifdef CYBSP_D9
+/** Arduino D9 \def CYBSP_D9
+*/
 #endif
-/** Arduino D10 */
-#ifndef CYBSP_D10
-#define CYBSP_D10                   (P12_3)
+#ifdef CYBSP_D10
+/** Arduino D10 \def CYBSP_D10
+*/
 #endif
-/** Arduino D11 */
-#ifndef CYBSP_D11
-#define CYBSP_D11                   (P12_0)
+#ifdef CYBSP_D11
+/** Arduino D11 \def CYBSP_D11
+*/
 #endif
-/** Arduino D12 */
-#ifndef CYBSP_D12
-#define CYBSP_D12                   (P12_1)
+#ifdef CYBSP_D12
+/** Arduino D12 \def CYBSP_D12
+*/
 #endif
-/** Arduino D13 */
-#ifndef CYBSP_D13
-#define CYBSP_D13                   (P12_2)
+#ifdef CYBSP_D13
+/** Arduino D13 \def CYBSP_D13
+*/
 #endif
-/** Arduino D14 */
-#ifndef CYBSP_D14
-#define CYBSP_D14                   (P6_1)
+#ifdef CYBSP_D14
+/** Arduino D14 \def CYBSP_D14
+*/
 #endif
-/** Arduino D15 */
-#ifndef CYBSP_D15
-#define CYBSP_D15                   (P6_0)
+#ifdef CYBSP_D15
+/** Arduino D15 \def CYBSP_D15
+*/
 #endif
 
 /** \} group_bsp_pins_arduino */
-
 
 /**
 * \addtogroup group_bsp_pins_j2 J2 Header Pins
 * \{
 */
 
-/** Cypress J2 Header pin 1 */
-#ifndef CYBSP_J2_1
-#define CYBSP_J2_1                  (CYBSP_A0)
+#ifdef CYBSP_J2_1
+/** Cypress J2 Header pin 1 \def CYBSP_J2_1
+*/
 #endif
-/** Cypress J2 Header pin 2 */
-#ifndef CYBSP_J2_2
-#define CYBSP_J2_2                  (P9_0)
+#ifdef CYBSP_J2_2
+/** Cypress J2 Header pin 2 \def CYBSP_J2_2
+*/
 #endif
-/** Cypress J2 Header pin 3 */
-#ifndef CYBSP_J2_3
-#define CYBSP_J2_3                  (CYBSP_A1)
+#ifdef CYBSP_J2_3
+/** Cypress J2 Header pin 3 \def CYBSP_J2_3
+*/
 #endif
-/** Cypress J2 Header pin 4 */
-#ifndef CYBSP_J2_4
-#define CYBSP_J2_4                  (P9_1)
+#ifdef CYBSP_J2_4
+/** Cypress J2 Header pin 4 \def CYBSP_J2_4
+*/
 #endif
-/** Cypress J2 Header pin 5 */
-#ifndef CYBSP_J2_5
-#define CYBSP_J2_5                  (CYBSP_A2)
+#ifdef CYBSP_J2_5
+/** Cypress J2 Header pin 5 \def CYBSP_J2_5
+*/
 #endif
-/** Cypress J2 Header pin 6 */
-#ifndef CYBSP_J2_6
-#define CYBSP_J2_6                  (P9_2)
+#ifdef CYBSP_J2_7
+/** Cypress J2 Header pin 7 \def CYBSP_J2_7
+*/
 #endif
-/** Cypress J2 Header pin 7 */
-#ifndef CYBSP_J2_7
-#define CYBSP_J2_7                  (CYBSP_A3)
+#ifdef CYBSP_J2_8
+/** Cypress J2 Header pin 8 \def CYBSP_J2_8
+*/
 #endif
-/** Cypress J2 Header pin 8 */
-#ifndef CYBSP_J2_8
-#define CYBSP_J2_8                  (P9_3)
+#ifdef CYBSP_J2_9
+/** Cypress J2 Header pin 9 \def CYBSP_J2_9
+*/
 #endif
-/** Cypress J2 Header pin 9 */
-#ifndef CYBSP_J2_9
-#define CYBSP_J2_9                  (CYBSP_A4)
+#ifdef CYBSP_J2_10
+/** Cypress J2 Header pin 10 \def CYBSP_J2_10
+*/
 #endif
-/** Cypress J2 Header pin 10 */
-#ifndef CYBSP_J2_10
-#define CYBSP_J2_10                 (P9_4)
+#ifdef CYBSP_J2_11
+/** Cypress J2 Header pin 11 \def CYBSP_J2_11
+*/
 #endif
-/** Cypress J2 Header pin 11 */
-#ifndef CYBSP_J2_11
-#define CYBSP_J2_11                 (CYBSP_A5)
+#ifdef CYBSP_J2_12
+/** Cypress J2 Header pin 12 \def CYBSP_J2_12
+*/
 #endif
-/** Cypress J2 Header pin 12 */
-#ifndef CYBSP_J2_12
-#define CYBSP_J2_12                 (P9_5)
+#ifdef CYBSP_J2_13
+/** Cypress J2 Header pin 13 \def CYBSP_J2_13
+*/
 #endif
-/** Cypress J2 Header pin 13 */
-#ifndef CYBSP_J2_13
-#define CYBSP_J2_13                 (P10_6)
+#ifdef CYBSP_J2_15
+/** Cypress J2 Header pin 15 \def CYBSP_J2_15
+*/
 #endif
-/** Cypress J2 Header pin 14 */
-#ifndef CYBSP_J2_14
-#define CYBSP_J2_14                 (NC)
+#ifdef CYBSP_J2_16
+/** Cypress J2 Header pin 16 \def CYBSP_J2_16
+*/
 #endif
-/** Cypress J2 Header pin 15 */
-#ifndef CYBSP_J2_15
-#define CYBSP_J2_15                 (P6_2)
+#ifdef CYBSP_J2_16
+/** Cypress J2 Header pin 16 \def CYBSP_J2_16
+*/
 #endif
-/** Cypress J2 Header pin 16 */
-#ifndef CYBSP_J2_16
-#define CYBSP_J2_16                 (P9_6)
+#ifdef CYBSP_J2_6
+/** Cypress J2 Header pin 6 \def CYBSP_J2_6
+*/
 #endif
-/** Cypress J2 Header pin 17 */
-#ifndef CYBSP_J2_17
-#define CYBSP_J2_17                 (P6_3)
+#ifdef CYBSP_J2_17
+/** Cypress J2 Header pin 17 \def CYBSP_J2_17
+*/
 #endif
-/** Cypress J2 Header pin 18 */
-#ifndef CYBSP_J2_18
-#define CYBSP_J2_18                 (P9_7)
+#ifdef CYBSP_J2_18
+/** Cypress J2 Header pin 18 \def CYBSP_J2_18
+*/
 #endif
-/** Cypress J2 Header pin 19 */
-#ifndef CYBSP_J2_19
-#define CYBSP_J2_19                 (P13_6)
+#ifdef CYBSP_J2_19
+/** Cypress J2 Header pin 19 \def CYBSP_J2_19
+*/
 #endif
-/** Cypress J2 Header pin 20 */
-#ifndef CYBSP_J2_20
-#define CYBSP_J2_20                 (P13_7)
+#ifdef CYBSP_J2_20
+/** Cypress J2 Header pin 20 \def CYBSP_J2_20
+*/
+#endif
+#ifdef CYBSP_J2_14
+/** Cypress J2 Header pin 14 \def CYBSP_J2_14
+*/
 #endif
 
 /** \} group_bsp_pins_j2 */
 
-/** \} group_bsp_pins */
+/**
+* \addtogroup group_bsp_pins_j6 J6 Header Pins
+* \{
+*/
 
-#endif /* defined(CY_USING_HAL) */
+#ifdef CYBSP_J6_1
+/** Cypress J6 Header pin 1 \def CYBSP_J6_1
+*/
+#endif
+#ifdef CYBSP_J6_2
+/** Cypress J6 Header pin 2 \def CYBSP_J6_2
+*/
+#endif
+#ifdef CYBSP_J6_3
+/** Cypress J6 Header pin 3 \def CYBSP_J6_3
+*/
+#endif
+#ifdef CYBSP_J6_4
+/** Cypress J6 Header pin 4 \def CYBSP_J6_4
+*/
+#endif
+#ifdef CYBSP_J6_5
+/** Cypress J6 Header pin 5 \def CYBSP_J6_5
+*/
+#endif
+#ifdef CYBSP_J6_6
+/** Cypress J6 Header pin 6 \def CYBSP_J6_6
+*/
+#endif
+#ifdef CYBSP_J6_7
+/** Cypress J6 Header pin 7 \def CYBSP_J6_7
+*/
+#endif
+#ifdef CYBSP_J6_8
+/** Cypress J6 Header pin 8 \def CYBSP_J6_8
+*/
+#endif
+#ifdef CYBSP_J6_9
+/** Cypress J6 Header pin 9 \def CYBSP_J6_9
+*/
+#endif
+#ifdef CYBSP_J6_10
+/** Cypress J6 Header pin 10 \def CYBSP_J6_10
+*/
+#endif
+#ifdef CYBSP_J6_11
+/** Cypress J6 Header pin 11 \def CYBSP_J6_11
+*/
+#endif
+#ifdef CYBSP_J6_12
+/** Cypress J6 Header pin 12 \def CYBSP_J6_12
+*/
+#endif
+#ifdef CYBSP_J6_13
+/** Cypress J6 Header pin 13 \def CYBSP_J6_13
+*/
+#endif
+#ifdef CYBSP_J6_14
+/** Cypress J6 Header pin 14 \def CYBSP_J6_14
+*/
+#endif
+#ifdef CYBSP_J6_15
+/** Cypress J6 Header pin 15 \def CYBSP_J6_15
+*/
+#endif
+#ifdef CYBSP_J6_16
+/** Cypress J6 Header pin 16 \def CYBSP_J6_16
+*/
+#endif
+
+/** \} group_bsp_pins_j6 */
+
+/**
+* \addtogroup group_bsp_pins_capsense Capsense
+* \{
+*/
+
+#ifdef CYBSP_CSD_TX
+/** Pin: CapSesnse TX \def CYBSP_CSD_TX
+*/
+#endif
+#ifdef CYBSP_CINA
+/** Pin: CapSesnse CINA \def CYBSP_CINA
+*/
+#endif
+#ifdef CYBSP_CINB
+/** Pin: CapSesnse CINB \def CYBSP_CINB
+*/
+#endif
+#ifdef CYBSP_CMOD
+/** Pin: CapSesnse CMOD \def CYBSP_CMOD
+*/
+#endif
+#ifdef CYBSP_CSD_BTN0
+/** Pin: CapSesnse Button 0 \def CYBSP_CSD_BTN0
+*/
+#endif
+#ifdef CYBSP_CSD_BTN1
+/** Pin: CapSesnse Button 1 \def CYBSP_CSD_BTN1
+*/
+#endif
+#ifdef CYBSP_CSD_SLD0
+/** Pin: CapSesnse Slider 0 \def CYBSP_CSD_SLD0
+*/
+#endif
+#ifdef CYBSP_CSD_SLD1
+/** Pin: CapSesnse Slider 1 \def CYBSP_CSD_SLD1
+*/
+#endif
+#ifdef CYBSP_CSD_SLD2
+/** Pin: CapSesnse Slider 2 \def CYBSP_CSD_SLD2
+*/
+#endif
+#ifdef CYBSP_CSD_SLD3
+/** Pin: CapSesnse Slider 3 \def CYBSP_CSD_SLD3
+*/
+#endif
+#ifdef CYBSP_CSD_SLD
+/** Pin: CapSesnse Slider 4 \def CYBSP_CSD_SLD
+*/
+#endif
+
+/** \} group_bsp_pins_capsense */
+
+/**
+* \addtogroup group_bsp_pins_wco WCO
+* \{
+*/
+#ifdef CYBSP_WCO_IN
+/** Pin: WCO input \def CYBSP_WCO_IN
+*/
+#endif
+#ifdef CYBSP_WCO_OUT
+/** Pin: WCO output \def CYBSP_WCO_OUT
+*/
+#endif
+
+/** \} group_bsp_pins_wco */
+
+
+/** \} group_bsp_pins */
 
 #if defined(__cplusplus)
 }

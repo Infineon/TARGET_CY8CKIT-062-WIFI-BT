@@ -4,11 +4,13 @@
 * Description:
 * System configuration
 * This file was automatically generated and should not be modified.
-* cfg-backend-cli: 1.2.0.1483
-* Device Support Library (libs/psoc6pdl): 1.6.0.4266
+* Tools Package 2.2.0.2801
+* latest-v2.X 2.0.0.6211
+* personalities 3.0.0.0
+* udd 3.0.0.562
 *
 ********************************************************************************
-* Copyright 2017-2019 Cypress Semiconductor Corporation
+* Copyright 2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,15 +53,6 @@ extern "C" {
 #define srss_0_clock_0_hfclk_0_ENABLED 1U
 #define CY_CFG_SYSCLK_CLKHF0 0UL
 #define CY_CFG_SYSCLK_CLKHF0_CLKPATH_NUM 0UL
-#define srss_0_clock_0_hfclk_1_ENABLED 1U
-#define CY_CFG_SYSCLK_CLKHF1 1UL
-#define CY_CFG_SYSCLK_CLKHF1_CLKPATH_NUM 1UL
-#define srss_0_clock_0_hfclk_2_ENABLED 1U
-#define CY_CFG_SYSCLK_CLKHF2 2UL
-#define CY_CFG_SYSCLK_CLKHF2_CLKPATH_NUM 0UL
-#define srss_0_clock_0_hfclk_3_ENABLED 1U
-#define CY_CFG_SYSCLK_CLKHF3 3UL
-#define CY_CFG_SYSCLK_CLKHF3_CLKPATH_NUM 1UL
 #define srss_0_clock_0_ilo_0_ENABLED 1U
 #define srss_0_clock_0_imo_0_ENABLED 1U
 #define srss_0_clock_0_lfclk_0_ENABLED 1U
