@@ -4,7 +4,7 @@
 * Description:
 * Simple wrapper header containing all generated files.
 * This file was automatically generated and should not be modified.
-* Tools Package 2.2.0.2801
+* Tools Package 2.2.0.2790
 * latest-v2.X 2.0.0.6211
 * personalities 3.0.0.0
 * udd 3.0.0.562
@@ -35,6 +35,7 @@ extern "C" {
 
 #include "cycfg_notices.h"
 #include "cycfg_system.h"
+#include "cycfg_connectivity_bt.h"
 #include "cycfg_clocks.h"
 #include "cycfg_routing.h"
 #include "cycfg_peripherals.h"

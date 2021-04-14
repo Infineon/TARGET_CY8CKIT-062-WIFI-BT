@@ -24,7 +24,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "CY8CKIT-062-WIFI-BT BSP", "index.html", [
-    [ "BSP Overview", "md_bsp_boards_mt_bsp_user_guide.html", null ],
+    [ "BSP Overview", "md_source_bsps_mt_bsp_user_guide.html", null ],
     [ "BSP Settings", "md_bsp_settings.html", null ],
     [ "BSP API Reference", "modules.html", "modules" ]
   ] ]
@@ -32,7 +32,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"group__group__bsp__functions.html"
+"group__group__bsp__bt.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

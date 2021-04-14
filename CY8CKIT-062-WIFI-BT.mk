@@ -6,7 +6,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2020 Cypress Semiconductor Corporation
+# Copyright 2018-2021 Cypress Semiconductor Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,17 +30,23 @@ endif
 include $(dir $(lastword $(MAKEFILE_LIST)))/locate_recipe.mk
 
 # MCU device selection
+#    Changing the device should be done using “make bsp” or “make update_bsp” with the “DEVICE_GEN”
+#    variable set to the new MCU. If you change the device manually here you must also update the
+#    design.modus file and re-run the device configurator.
 DEVICE:=CY8C6247BZI-D54
 # Additional devices on the board
+#    If you change the additional device here you must also update the design.modus file and re-run
+#    the device configurator. You may also need to update the COMPONENT variable to include the
+#    correct Wi-Fi and Bluetooth firmware.
 ADDITIONAL_DEVICES:=CYW4343WKUBG
 # Default target core to CM4 if not already set
 CORE?=CM4
 # Basic architecture specific components
-COMPONENTS+=CAT1A
+COMPONENTS+=$(TARGET) CAT1 CAT1A
 
 ifeq ($(CORE),CM4)
 # Additional components supported by the target
-COMPONENTS+=CM0P_SLEEP BSP_DESIGN_MODUS PSOC6HAL UDB_SDIO_P2 4343W
+COMPONENTS+=CM0P_SLEEP BSP_DESIGN_MODUS PSOC6HAL UDB_SDIO_P2 4343W WLBGA
 # Use CyHAL & UDB based SDIO
 DEFINES+=CY_USING_HAL CYHAL_UDB_SDIO
 endif

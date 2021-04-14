@@ -1,24 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "abcfjlmpw",
+  0: "abcefjlmpw",
   1: "c",
-  2: "abcfjlmpw",
-  3: "cmp"
+  2: "c",
+  3: "abcefjlpw",
+  4: "cmp"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "functions",
-  2: "groups",
-  3: "pages"
+  2: "variables",
+  3: "groups",
+  4: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Functions",
-  2: "Modules",
-  3: "Pages"
+  2: "Variables",
+  3: "Modules",
+  4: "Pages"
 };
 
