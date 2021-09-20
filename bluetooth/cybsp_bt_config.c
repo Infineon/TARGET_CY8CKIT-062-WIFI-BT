@@ -1,6 +1,8 @@
 /***********************************************************************************************//**
  * \copyright
- * Copyright 2020-2021 Cypress Semiconductor Corporation
+ * Copyright 2020-2021 Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation
+ *
  * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +21,7 @@
 #if defined(COMPONENT_WICED_BLE) || defined(COMPONENT_WICED_DUALMODE)
 
 #include "cybsp_bt_config.h"
+#include "cycfg_connectivity_bt.h"
 #include "wiced_bt_dev.h"
 
 const cybt_platform_config_t cybsp_bt_platform_cfg =
@@ -50,7 +53,6 @@ const cybt_platform_config_t cybsp_bt_platform_cfg =
     .controller_config                      =
     {
         .bt_power_pin                       = CYBSP_BT_POWER,
-        #if (bt_0_power_0_ENABLED == 1)
         .sleep_mode                         =
         {
             .sleep_mode_enabled             = CYCFG_BT_LP_ENABLED,
@@ -59,16 +61,6 @@ const cybt_platform_config_t cybsp_bt_platform_cfg =
             .device_wake_polarity           = CYCFG_BT_DEV_WAKE_POLARITY,
             .host_wake_polarity             = CYCFG_BT_HOST_WAKE_IRQ_EVENT
         }
-        #else
-        .sleep_mode                         =
-        {
-            .sleep_mode_enabled             = true,
-            .device_wakeup_pin              = CYBSP_BT_DEVICE_WAKE,
-            .host_wakeup_pin                = CYBSP_BT_HOST_WAKE,
-            .device_wake_polarity           = CYBT_WAKE_ACTIVE_LOW,
-            .host_wake_polarity             = CYBT_WAKE_ACTIVE_LOW
-        }
-        #endif /* (bt_0_power_0_ENABLED == 1) */
     },
 
     .task_mem_pool_size                     = CYBSP_BT_PLATFORM_CFG_MEM_POOL_BYTES
