@@ -15,7 +15,7 @@ To use code from the BSP, simply include a reference to `cybsp.h`.
 * BLE v5.0
 * Serial memory interface
 * PDM-PCM digital microphone interface
-* Industry-leading CapSense
+* Industry-leading CAPSENSE
 * Full-speed USB
 * IEEE 802.11a/b/g/n WLAN
 
@@ -66,7 +66,7 @@ See the [BSP API Reference Manual][api] for the complete list of the provided in
 * [CY8CKIT-062-WIFI-BT Documentation](http://www.cypress.com/documentation/development-kitsboards/psoc-6-wifi-bt-pioneer-kit)
 * [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
 * [Infineon GitHub](https://github.com/infineon)
-* [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
+* [ModusToolbox™](https://www.cypress.com/products/modustoolbox-software-environment)
 
 [api]: https://infineon.github.io/TARGET_CY8CKIT-062-WIFI-BT/html/modules.html
 [settings]: https://infineon.github.io/TARGET_CY8CKIT-062-WIFI-BT/html/md_bsp_settings.html

@@ -4,13 +4,14 @@
 * Description:
 * Clock configuration
 * This file was automatically generated and should not be modified.
-* Tools Package 2.2.0.2790
-* latest-v2.X 2.0.0.6211
-* personalities 3.0.0.0
-* udd 3.0.0.562
+* Tools Package 2.4.0.5721
+* mtb-pdl-cat1 3.0.0.10651
+* personalities 5.0.0.0
+* udd 3.0.0.1377
 *
 ********************************************************************************
-* Copyright 2020 Cypress Semiconductor Corporation
+* Copyright 2021 Cypress Semiconductor Corporation (an Infineon company) or
+* an affiliate of Cypress Semiconductor Corporation.
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,7 @@
 #include "cycfg_notices.h"
 #include "cy_sysclk.h"
 #if defined (CY_USING_HAL)
-	#include "cyhal_hwmgr.h"
+    #include "cyhal_hwmgr.h"
 #endif //defined (CY_USING_HAL)
 
 #if defined(__cplusplus)
@@ -47,8 +48,8 @@ extern "C" {
 #define CYBSP_CS_CLK_DIV_NUM CYBSP_CSD_CLK_DIV_NUM
 
 #if defined (CY_USING_HAL)
-	extern const cyhal_resource_inst_t CYBSP_CSD_CLK_DIV_obj;
-	#define CYBSP_CS_CLK_DIV_obj CYBSP_CSD_CLK_DIV_obj
+    extern const cyhal_resource_inst_t CYBSP_CSD_CLK_DIV_obj;
+    #define CYBSP_CS_CLK_DIV_obj CYBSP_CSD_CLK_DIV_obj
 #endif //defined (CY_USING_HAL)
 
 void init_cycfg_clocks(void);
