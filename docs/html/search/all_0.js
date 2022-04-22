@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arduino_20header_20pins',['Arduino Header Pins',['../group__group__bsp__pins__arduino.html',1,'']]]
+  ['cy8ckit_2d062_2dwifi_2dbt_20bsp_0',['CY8CKIT-062-WIFI-BT BSP',['../index.html',1,'']]]
 ];

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Design version="12" xmlns="http://cypress.com/xsd/cydesignfile_v3">
-    <ToolInfo version="2.4.0.5721"/>
+    <ToolInfo version="2.4.0.5972"/>
     <Devices>
         <Device mpn="CY8C6247BZI-D54">
             <BlockConfig>
@@ -497,6 +497,7 @@
                 <Block location="srss[0].clock[0].altsystickclk[0]">
                     <Personality template="mxs40altsystick" version="1.0">
                         <Param id="sourceClock" value="lfclk"/>
+                        <Param id="interval" value="0"/>
                     </Personality>
                 </Block>
                 <Block location="srss[0].clock[0].bakclk[0]">

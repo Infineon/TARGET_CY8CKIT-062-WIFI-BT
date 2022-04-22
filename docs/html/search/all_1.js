@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bluetooth_20configuration_20structure',['Bluetooth Configuration Structure',['../group__group__bsp__bt.html',1,'']]],
-  ['button_20pins',['Button Pins',['../group__group__bsp__pins__btn.html',1,'']]]
+  ['modustoolbox™_20board_20support_20package_20_28bsp_29_20overview_0',['ModusToolbox™ Board Support Package (BSP) Overview',['../md_source_bsps_mt_bsp_user_guide.html',1,'']]]
 ];
