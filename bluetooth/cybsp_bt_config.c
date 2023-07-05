@@ -78,7 +78,7 @@ const cybt_platform_config_t cybsp_bt_platform_cfg =
         .bt_power_pin                       = CYBSP_BT_POWER,
         .sleep_mode                         =
         {
-            .sleep_mode_enabled             = CYCFG_BT_LP_ENABLED,
+            .sleep_mode_enabled             = CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED,
             .device_wakeup_pin              = CYCFG_BT_DEV_WAKE_GPIO,
             .host_wakeup_pin                = CYCFG_BT_HOST_WAKE_GPIO,
             .device_wake_polarity           = CYCFG_BT_DEV_WAKE_POLARITY,

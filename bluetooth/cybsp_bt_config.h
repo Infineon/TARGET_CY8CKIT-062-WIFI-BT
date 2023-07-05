@@ -59,6 +59,11 @@ extern "C" {
 #define CYBSP_BT_PLATFORM_CFG_MEM_POOL_BYTES    (2048)
 #endif
 
+#if !defined(CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED)
+/** If not already defined, the sleep mode LP is enabled. */
+#define CYBSP_BT_PLATFORM_CFG_SLEEP_MODE_LP_ENABLED      (CYCFG_BT_LP_ENABLED)
+#endif
+
 /** Bluetooth platform configuration settings for the board. */
 extern const cybt_platform_config_t cybsp_bt_platform_cfg;
 
