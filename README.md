@@ -2,7 +2,7 @@
 
 ## Overview
 
-The PSoC™ 6 WiFi-BT Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC™ 62 MCU (CY8C6247BZI-D54) and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
+The PSOC™ 6 WiFi-BT Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSOC™ 62 MCU (CY8C6247BZI-D54) and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
 
 ![](docs/html/board.png)
 

@@ -1,13 +1,14 @@
 {
     "core": {
-        "version": "4.3.2.43194"
+        "version": "5.0.0.43862"
     },
     "opt": {
         "props": {
             "capabilities": [
                 "adc",
+                "anycloud",
                 "arduino",
-                "bsp_gen4",
+                "bsp_gen5",
                 "bt",
                 "capsense",
                 "capsense_button",
@@ -53,6 +54,7 @@
                 "wifi"
             ],
             "dependencies": {
+                "bt-fw-mur-cyw4343w": "latest-v1.X",
                 "cat1cm0p": "latest-v1.X",
                 "core-lib": "latest-v1.X",
                 "core-make": "latest-v3.X",

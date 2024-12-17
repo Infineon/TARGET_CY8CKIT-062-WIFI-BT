@@ -1,7 +1,7 @@
 # CY8CKIT-062-WIFI-BT BSP Release Notes
-The PSoC™ 6 WiFi-BT Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSoC™ 62 MCU (CY8C6247BZI-D54) and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
+The PSOC™ 6 WiFi-BT Pioneer Kit is a low-cost hardware platform that enables design and debug of the PSOC™ 62 MCU (CY8C6247BZI-D54) and the Murata LBEE5KL1DX Module (CYW4343W WiFi + Bluetooth Combo Chip).
 
-NOTE: BSPs are versioned by family. This means that version 1.2.0 of any BSP in a family (eg: PSoC™ 6) will have the same software maturity level. However, not all updates are necessarily applicable for each BSP in the family so not all version numbers will exist for each board. Additionally, new BSPs may not start at version 1.0.0. In the event of adding a common feature across all BSPs, the libraries are assigned the same version number. For example if BSP_A is at v1.3.0 and BSP_B is at v1.2.0, the event will trigger a version update to v1.4.0 for both BSP_A and BSP_B. This allows the common feature to be tracked in a consistent way.
+NOTE: BSPs are versioned by family. This means that version 1.2.0 of any BSP in a family (eg: PSOC™ 6) will have the same software maturity level. However, not all updates are necessarily applicable for each BSP in the family so not all version numbers will exist for each board. Additionally, new BSPs may not start at version 1.0.0. In the event of adding a common feature across all BSPs, the libraries are assigned the same version number. For example if BSP_A is at v1.3.0 and BSP_B is at v1.2.0, the event will trigger a version update to v1.4.0 for both BSP_A and BSP_B. This allows the common feature to be tracked in a consistent way.
 
 ### What's Included?
 The CY8CKIT-062-WIFI-BT library includes the following:
@@ -15,10 +15,10 @@ The CY8CKIT-062-WIFI-BT library includes the following:
 * API documentation
 
 ### What Changed?
-#### v4.3.2
-* Updated the supported capabilities in props.json for PSoC&trade; 6 MCU BSPs with AIROC&trade; Wi-Fi and Bluetooth&reg; Combo devices.
+#### v5.0.0
+New dependency added for PSOC™ 6 MCU BSPs with AIROC™ Wi-Fi Bluetooth® Combo devices
 #### v4.3.1
-* Updated the README file for CY8CEVAL-062S2-MUR-43439M2.
+Updated the README file for CY8CEVAL-062S2-MUR-43439M2.
 #### v4.3.0
 * Update companion device pin configuration to align with requirements of MUR-43439 and LAI-43439 M.2 module.
 * Updated the README file for CY8CEVAL-062S2, CY8CEVAL-062S2-LAI-43439M2, CY8CEVAL-062S2-LAI-4373M2, CY8CEVAL-062S2-MUR-4373M2, CY8CEVAL-062S2-MUR-4373EM2, and CY8CEVAL-062S2-CYW43022CUB BSPs to remove the M.2 radio module detail from kit contents section.
@@ -30,7 +30,7 @@ The CY8CKIT-062-WIFI-BT library includes the following:
 * Added capabilities to match BSPS created by BSP Assistant chip flow
 #### v4.1.0
 * Add macro `CYBSP_USER_BTN_DRIVE` indicating the drive mode that should be used for user buttons
-* PSoC 64 boards: Fix cybsp_init not recognizing that a prebuilt CM0+ image is in use when using TFM.
+* PSOC™ 64 boards: Fix cybsp_init not recognizing that a prebuilt CM0+ image is in use when using TFM.
 #### v4.0.0
 Note: This revision is only compatible with ModusToolbox Tools 3.0 and newer.
 * Removed default dependency on CAPSENSE™ middleware. The library manager can be used to add this dependency if desired.
@@ -50,7 +50,7 @@ Note: This revision is only compatible with ModusToolbox Tools 3.0 and newer.
 * Simplify BT configuration settings for boards that support it
 * Minor branding updates
 #### v2.2.0
-* Updated PSoC™ 64 linker sections to match secure policy settings
+* Updated PSOC™ 64 linker sections to match secure policy settings
 * Minor documentation updates
 #### v2.1.0
 * Added component CAT1 to all boards
@@ -95,10 +95,10 @@ This version of the CY8CKIT-062-WIFI-BT BSP was validated for compatibility with
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox™ Software Environment        | 3.1.0   |
-| GCC Compiler                              | 12.2.1  |
-| IAR Compiler                              | 9.40.2  |
-| ARM Compiler                              | 6.16    |
+| ModusToolbox™ Software Environment        | 3.2.0   |
+| GCC Compiler                              | 11.3.1  |
+| IAR Compiler                              | 9.50.2  |
+| ARM Compiler                              | 6.22    |
 
 Minimum required ModusToolbox™ Software Environment: v3.0.0
 
@@ -112,4 +112,4 @@ Minimum required ModusToolbox™ Software Environment: v3.0.0
 [api]: https://infineon.github.io/TARGET_CY8CKIT-062-WIFI-BT/html/modules.html
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2022.
+© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2024.
