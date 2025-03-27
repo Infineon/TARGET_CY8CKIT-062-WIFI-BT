@@ -15,10 +15,13 @@ The CY8CKIT-062-WIFI-BT library includes the following:
 * API documentation
 
 ### What Changed?
+#### v5.0.1
+* Updated the capabilities in props.json for PSOC™ 6 MCU BSPs with AIROC™ Wi-Fi Bluetooth® Combo devices
+* Updated linker scripts to align with mtb-pdl-cat1 v3.16.0 for CY8CPROTO-062S3-4343W BSP
 #### v5.0.0
-New dependency added for PSOC™ 6 MCU BSPs with AIROC™ Wi-Fi Bluetooth® Combo devices
+* New dependency (Bluetooth® fimrware) added for PSOC™ 6 MCU BSPs with AIROC™ Wi-Fi Bluetooth® Combo devices
 #### v4.3.1
-Updated the README file for CY8CEVAL-062S2-MUR-43439M2.
+* Updated the README file for CY8CEVAL-062S2-MUR-43439M2.
 #### v4.3.0
 * Update companion device pin configuration to align with requirements of MUR-43439 and LAI-43439 M.2 module.
 * Updated the README file for CY8CEVAL-062S2, CY8CEVAL-062S2-LAI-43439M2, CY8CEVAL-062S2-LAI-4373M2, CY8CEVAL-062S2-MUR-4373M2, CY8CEVAL-062S2-MUR-4373EM2, and CY8CEVAL-062S2-CYW43022CUB BSPs to remove the M.2 radio module detail from kit contents section.
@@ -112,4 +115,4 @@ Minimum required ModusToolbox™ Software Environment: v3.0.0
 [api]: https://infineon.github.io/TARGET_CY8CKIT-062-WIFI-BT/html/modules.html
 
 ---
-© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2024.
+© Cypress Semiconductor Corporation (an Infineon company) or an affiliate of Cypress Semiconductor Corporation, 2019-2025.

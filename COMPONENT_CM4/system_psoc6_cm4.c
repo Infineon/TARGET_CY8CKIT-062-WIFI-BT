@@ -291,7 +291,7 @@ void SystemCoreClockUpdate (void)
     /* The CM4 core's clock source is the fast clock. */
     SystemCoreClock = Cy_SysClk_ClkFastGetFrequency();
 
-    /* Get frequency for the high-frequency clock # 2 , whcih is used for PERI PCLK*/
+    /* Get frequency for the high-frequency clock # 2 , which is used for PERI PCLK*/
     cy_PeriClkFreqHz = Cy_SysClk_ClkHfGetFrequency(CY_SYSCLK_CLK_PERI_HF_PATH_NUM);
 
     /* Sets clock frequency for Delay API */
